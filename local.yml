@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+  - name: install htop
+    package:
+      name: htop
+
+
+  # tasks:
+  # - name: Install collection community.general
+  # community.general.ansible_galaxy_install:
+  #   type: collection
+  #   name: community.general
