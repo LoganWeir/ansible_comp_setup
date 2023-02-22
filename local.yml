@@ -1,12 +1,15 @@
 ---
 - hosts: localhost
   connection: local
-  become: true
+  vars:
+    # sudo everything except brew
+    # should_be_root:  "{{ true if ansible_pkg_mgr != 'brew' else false }}"
+  # become: true
 
   tasks:
-  - name: install htop
+  - name: install pyenv
     package:
-      name: htop
+      name: chezmoi
 
 
   # tasks:
